@@ -154,6 +154,7 @@ a {
   flex-wrap: wrap;
   align-items: baseline;
   font-size: 12.5px;
+  font-style: normal;
   color: var(--muted);
   padding-bottom: 14px;
   margin-bottom: 24px;
@@ -267,8 +268,6 @@ a {
 
 .cv-courses {
   list-style: none;
-  columns: 2;
-  column-gap: 36px;
 }
 .cv-courses li {
   position: relative;
