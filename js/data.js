@@ -19,6 +19,8 @@ const DATA = {
       email: "urielalexistunalopez23@gmail.com",
       linkedin: "https://www.linkedin.com/in/urielalexislunalopez/",
       linkedinLabel: "linkedin.com/in/urielalexislunalopez",
+      website: "https://urielluna.site/",
+      websiteLabel: "urielluna.site",
       location: "Querétaro, México",
     },
     summary:
@@ -195,7 +197,9 @@ const DATA = {
       phone: "56 3207 0069",
       email: "urielalexistunalopez23@gmail.com",
       linkedin: "https://www.linkedin.com/in/urielalexislunalopez/",
-      linkedinLabel: "linkedin.com/in/urietalexislunalopez",
+      linkedinLabel: "linkedin.com/in/urielalexislunalopez",
+      website: "https://urielluna.site/",
+      websiteLabel: "urielluna.site",
       location: "Querétaro, Mexico",
     },
     summary:
