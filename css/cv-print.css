@@ -1,0 +1,269 @@
+/* ============================================================================
+   CV PDF — cv-print.css
+   Estilos en pantalla (hoja centrada) + estilos de impresión para guardar PDF.
+   ========================================================================== */
+
+:root {
+  --ink: #0a0a0a;
+  --muted: #555;
+  --line: #222;
+  --accent: #0071e3;
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --font-serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: #e9e7e3;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  padding-top: 60px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================= TOOLBAR (pantalla) ============================= */
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.88);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  backdrop-filter: saturate(180%) blur(16px);
+  color: #111;
+  border-bottom: 1px solid #e7e7e4;
+}
+.toolbar-spacer {
+  flex: 1;
+}
+.toolbar-link {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #111;
+}
+.toolbar-link:hover {
+  color: var(--accent);
+}
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid #d5d5d1;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 7px 13px;
+  color: #888;
+}
+.lang-btn.active {
+  background: #111;
+  color: #fff;
+}
+.toolbar-print {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.toolbar-print:hover {
+  opacity: 0.9;
+}
+
+.hint {
+  max-width: 840px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* ============================= HOJA ============================= */
+.sheet {
+  max-width: 840px;
+  margin: 28px auto;
+  background: #fff;
+  padding: 56px 64px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14);
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ---------- header ---------- */
+.cv-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.cv-name {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.cv-headline {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.cv-contact {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ---------- secciones ---------- */
+.cv-section {
+  margin-bottom: 22px;
+}
+.cv-h2 {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 5px;
+  margin-bottom: 12px;
+}
+.cv-summary {
+  color: #2b2b2b;
+}
+
+.cv-block {
+  margin-bottom: 13px;
+  break-inside: avoid;
+}
+.cv-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+.cv-company {
+  font-weight: 700;
+  font-size: 13.5px;
+}
+.cv-role {
+  font-style: italic;
+  color: var(--muted);
+  margin: 1px 0 5px;
+}
+.cv-date {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.cv-line {
+  color: #2b2b2b;
+  margin-top: 2px;
+}
+
+.cv-bullets {
+  list-style: none;
+  margin-top: 4px;
+}
+.cv-bullets li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 4px;
+  color: #2b2b2b;
+}
+.cv-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #111;
+}
+
+.cv-skill {
+  margin-bottom: 6px;
+}
+.cv-skill-cat {
+  font-weight: 700;
+}
+.cv-skill-items {
+  color: #2b2b2b;
+}
+
+.cv-courses {
+  list-style: none;
+  columns: 2;
+  column-gap: 36px;
+}
+.cv-courses li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 5px;
+  color: #2b2b2b;
+  break-inside: avoid;
+}
+.cv-courses li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #111;
+}
+.cv-courses .cv-date {
+  white-space: normal;
+}
+
+/* ============================= IMPRESIÓN ============================= */
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+  .toolbar,
+  .hint {
+    display: none !important;
+  }
+  .sheet {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: 12px;
+  }
+  .cv-section {
+    margin-bottom: 16px;
+  }
+  .cv-name {
+    font-size: 26px;
+  }
+  .cv-block,
+  .cv-skill,
+  .cv-courses li {
+    break-inside: avoid;
+  }
+  a {
+    color: inherit;
+  }
+  @page {
+    size: letter;
+    margin: 14mm 14mm 15mm 14mm;
+  }
+}

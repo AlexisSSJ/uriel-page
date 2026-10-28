@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uriel Luna — Actuario & Data Scientist</title>
+  <meta name="description" content="Portafolio de Uriel Alexis Luna López — Actuario y Data Scientist especializado en Machine Learning, Big Data y BI." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffffff'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='30' font-weight='400' fill='%230a0a0a' text-anchor='middle'%3EUL%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+
+  <!-- ======================= MASTHEAD ======================= -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="#top" class="brand">Uriel&nbsp;Luna</a>
+      <nav class="nav" id="navLinks" aria-label="Principal"></nav>
+      <div class="nav-actions">
+        <div class="lang-toggle" id="langToggle"></div>
+        <div class="cv-dropdown" id="cvDropdown">
+          <button class="cv-btn" id="cvBtn" aria-haspopup="true" aria-expanded="false">Descargar CV</button>
+          <div class="cv-menu" id="cvMenu" hidden>
+            <a href="cv.html?lang=es" target="_blank" rel="noopener">Español</a>
+            <a href="cv.html?lang=en" target="_blank" rel="noopener">English</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================= HERO / PORTADA ======================= -->
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="hero-kicker" id="heroHeadline"></p>
+        <h1 class="hero-name" id="heroName"></h1>
+        <p class="hero-status">
+          <span class="hero-status-dot" aria-hidden="true"></span>
+          <span id="heroAvailability"></span>
+        </p>
+        <p class="hero-loc" id="heroBasedIn"></p>
+        <a href="#projects" class="hero-cta" id="heroPortfolio"></a>
+      </div>
+
+      <figure class="hero-figure">
+        <div class="hero-figure-frame">
+          <img src="assets/img/profile.jpg" alt="Retrato de Uriel Luna" fetchpriority="high" />
+        </div>
+        <figcaption class="hero-caption">
+          <span class="hero-caption-name" id="heroCaptionName"></span>
+          <span class="hero-caption-loc" id="heroCaptionLoc"></span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ======================= ABOUT / LEDE ======================= -->
+    <section class="lede" id="about">
+      <p class="lede-kicker" id="aboutTag"></p>
+      <p class="lede-text" id="bioText"></p>
+    </section>
+
+    <!-- ======================= EXPERIENCE ======================= -->
+    <section class="chapter" id="experience">
+      <header class="chapter-head">
+        <h2 class="chapter-title" id="experienceTitle"></h2>
+        <p class="chapter-sub" id="experienceSub"></p>
+      </header>
+      <div class="chapter-body" id="experienceList"></div>
+    </section>
+
+    <!-- ======================= PROJECTS ======================= -->
+    <section class="chapter chapter--full" id="projects">
+      <header class="chapter-head chapter-head--full">
+        <h2 class="chapter-title" id="projectsTitle"></h2>
+        <p class="chapter-sub" id="projectsSub"></p>
+      </header>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- ======================= SKILLS ======================= -->
+    <section class="chapter" id="skills">
+      <header class="chapter-head">
+        <h2 class="chapter-title" id="skillsTitle"></h2>
+      </header>
+      <div class="chapter-body skills-list" id="skillsGrid"></div>
+    </section>
+
+    <!-- ==================== EDUCATION / CERTS / COURSES ==================== -->
+    <section class="chapter" id="education">
+      <header class="chapter-head">
+        <h2 class="chapter-title" id="educationTitle"></h2>
+      </header>
+      <div class="chapter-body edu-grid">
+        <div class="edu-col">
+          <h3 class="edu-col-title" id="educationColTitle"></h3>
+          <div id="educationList"></div>
+        </div>
+        <div class="edu-col">
+          <h3 class="edu-col-title" id="certificationsColTitle"></h3>
+          <div id="certificationsList"></div>
+          <h3 class="edu-col-title edu-col-title--gap" id="coursesColTitle"></h3>
+          <ul class="courses-list" id="coursesList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CONTACT ======================= -->
+    <footer class="footer" id="contact">
+      <p class="footer-kicker">Contacto</p>
+      <h2 class="footer-cta" id="contactTitle"></h2>
+      <p class="footer-sub" id="contactSub"></p>
+      <div class="contact-links" id="contactLinks"></div>
+      <div class="footer-note" id="footerNote"></div>
+    </footer>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
