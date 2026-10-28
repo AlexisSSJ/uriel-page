@@ -130,48 +130,63 @@
   }
 
   const c = d.contact;
-  const contactLine = `${c.phone} &nbsp;·&nbsp; ${c.email} &nbsp;·&nbsp; ${c.linkedinLabel}`;
+  const contactHTML = `
+      <span>${esc(c.phone)}</span>
+      <a href="mailto:${esc(c.email)}">${esc(c.email)}</a>
+      <a href="${esc(c.linkedin)}" target="_blank" rel="noopener">${esc(c.linkedinLabel)}</a>
+      <a class="cv-web" href="${esc(c.website)}" target="_blank" rel="noopener">${esc(c.websiteLabel)} ↗</a>`;
 
   $("cvSheet").innerHTML = `
     <header class="cv-header">
-      <h1 class="cv-name">${esc(d.fullName)}</h1>
-      <div class="cv-headline">${esc(d.headline)}</div>
-      <div class="cv-contact">${contactLine}</div>
+      <div class="cv-header-main">
+        <h1 class="cv-name">${esc(d.fullName)}</h1>
+        <div class="cv-headline">${esc(d.headline)}</div>
+      </div>
+      <figure class="cv-photo">
+        <img src="assets/img/profile.jpg" alt="Retrato de Uriel Luna" />
+      </figure>
     </header>
+    <address class="cv-contact">${contactHTML}</address>
 
-    <section class="cv-section">
-      <h2 class="cv-h2">${L.summary}</h2>
-      <p class="cv-summary">${esc(d.summary)}</p>
-    </section>
+    <div class="cv-cols">
+      <div class="cv-main">
+        <section class="cv-section">
+          <h2 class="cv-h2">${L.summary}</h2>
+          <p class="cv-summary">${esc(d.summary)}</p>
+        </section>
 
-    <section class="cv-section">
-      <h2 class="cv-h2">${L.experience}</h2>
-      ${experienceHTML()}
-    </section>
+        <section class="cv-section">
+          <h2 class="cv-h2">${L.experience}</h2>
+          ${experienceHTML()}
+        </section>
 
-    <section class="cv-section">
-      <h2 class="cv-h2">${L.education}</h2>
-      ${educationHTML()}
-    </section>
+        <section class="cv-section">
+          <h2 class="cv-h2">${L.education}</h2>
+          ${educationHTML()}
+        </section>
 
-    <section class="cv-section">
-      <h2 class="cv-h2">${L.certifications}</h2>
-      ${certificationsHTML()}
-    </section>
+        <section class="cv-section">
+          <h2 class="cv-h2">${L.projects}</h2>
+          ${projectsHTML()}
+        </section>
+      </div>
 
-    <section class="cv-section">
-      <h2 class="cv-h2">${L.skills}</h2>
-      ${skillsHTML()}
-    </section>
+      <aside class="cv-side">
+        <section class="cv-section">
+          <h2 class="cv-h2">${L.skills}</h2>
+          ${skillsHTML()}
+        </section>
 
-    <section class="cv-section">
-      <h2 class="cv-h2">${L.projects}</h2>
-      ${projectsHTML()}
-    </section>
+        <section class="cv-section">
+          <h2 class="cv-h2">${L.certifications}</h2>
+          ${certificationsHTML()}
+        </section>
 
-    <section class="cv-section">
-      <h2 class="cv-h2">${L.courses}</h2>
-      <ul class="cv-courses">${coursesHTML()}</ul>
-    </section>
+        <section class="cv-section">
+          <h2 class="cv-h2">${L.courses}</h2>
+          <ul class="cv-courses">${coursesHTML()}</ul>
+        </section>
+      </aside>
+    </div>
   `;
 })();
