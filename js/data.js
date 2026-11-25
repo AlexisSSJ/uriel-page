@@ -13,7 +13,7 @@ const DATA = {
   es: {
     name: "URIEL LUNA",
     fullName: "Uriel Alexis Luna López",
-    headline: "Actuario & Data Scientist",
+    headline: "Actuario & Data Specialist",
     contact: {
       phone: "56 3207 0069",
       email: "urielalexistunalopez23@gmail.com",
@@ -192,7 +192,7 @@ const DATA = {
   en: {
     name: "Uriel Luna",
     fullName: "Uriel Alexis Luna López",
-    headline: "Actuary & Data Scientist",
+    headline: "Actuary & Data Specialist",
     contact: {
       phone: "56 3207 0069",
       email: "urielalexistunalopez23@gmail.com",
